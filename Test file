@@ -1,0 +1,311 @@
+import { Component, OnInit,AfterViewInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { LocalDataSource } from 'ng2-smart-table';
+
+@Component({
+  selector: 'app-user-access',
+    templateUrl: 'app/Components/Admin/user-access/user-access.component.html',
+    styleUrls: ['app/Components/Admin/user-access/user-access.component.css']
+})
+export class UserAccessComponent implements OnInit, AfterViewInit  {
+@ViewChild('tree') tree;
+
+ ngAfterViewInit() {
+    this.tree.treeModel.expandAll();
+  }
+settings = {
+    delete: {
+      deleteButtonContent: '<i class="fa fa-trash" aria-hidden="true" title="Delete"></i>',
+      confirmDelete: true,
+    },
+    add: {
+      confirmCreate: true,
+      createButtonContent: '<i class="fa fa-pencil-square-o" title="Add"></i>',
+      cancelButtonContent:'<i class="fa fa-times aria-hidden="true" title="Cancel"></i>',
+    },
+    edit: {
+      editButtonContent: '<i class="fa fa-pencil-square" aria-hidden="true" title="Edit"></i>',
+      saveButtonContent: '<i class="fa fa-pencil-square-o" title="Save"></i>',
+      cancelButtonContent:'<i class="fa fa-times aria-hidden="true" title="Cancel"></i>',
+      confirmSave: true,
+    },
+    columns: {
+      employeeID: {
+        title: 'Employee ID',
+      },
+      firstName: {
+        title: 'First Name',
+      },
+      lastName: {
+        title: 'Last Name',
+      },
+      metnetID: {
+        title: 'MetNet ID',
+      },
+       email: {
+        title: 'Work Email',
+      },
+       status: {
+        title: 'Active Status',
+      },
+       creationDate: {
+        title: 'Creation Date',
+      },
+       lastModifiedDate: {
+        title: 'Last Modified Date',
+      },
+      lastModifiedBy: {
+        title: 'Last Modified By',
+      },
+    },
+  };
+
+  data = [
+    {
+      employeeID: '1065889',
+      firstName: 'Rudrajit ',
+      lastName: 'Chakraborty ',
+      metnetID: 'rchakraborty3 ',
+      email: 'rchakrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/28/2011',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+       employeeID: '2065889',
+      firstName: 'rajit ',
+      lastName: 'raborty ',
+      metnetID: 'rchakrabo3 ',
+      email: 'hakrabort4@metlife.com ',
+      status: 'Y',
+      creationDate: '5/8/2012',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+      employeeID: '2165889',
+      firstName: 'udrajit ',
+      lastName: 'akraborty ',
+      metnetID: 'rhakraborty3 ',
+      email: 'chakrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/2/2018',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto12 ',
+    },
+    {
+      employeeID: '1765889',
+      firstName: 'Selvaraj ',
+      lastName: 'Ayyappan ',
+      metnetID: 'sayyappan ',
+      email: 'selvaraj.a@metlife.com ',
+      status: ' N ',
+      creationDate: '4/20/2017',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto12 ',
+    },
+    {
+     employeeID: '1465889',
+      firstName: 'ajit ',
+      lastName: 'borty ',
+      metnetID: 'akraborty3 ',
+      email: 'akrabort4@metlife.com ',
+      status: ' Y',
+      creationDate: '1/11/2013',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+       employeeID: '1065289',
+      firstName: 'Rudrt ',
+      lastName: 'Chaborty ',
+      metnetID: 'rraborty3 ',
+      email: 'rckrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/28/2011',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+      employeeID: '1165889',
+      firstName: 'Rurajit ',
+      lastName: 'Chakraty ',
+      metnetID: 'rchakraborty3 ',
+      email: 'rchakrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/28/2011',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+       employeeID: '1065889',
+      firstName: 'Rudrajit ',
+      lastName: 'Chakraborty ',
+      metnetID: 'rchakraborty3 ',
+      email: 'rchakrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/28/2011',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+      employeeID: '1065889',
+      firstName: 'Rudrajit ',
+      lastName: 'Chakraborty ',
+      metnetID: 'rchakraborty3 ',
+      email: 'rchakrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/28/2011',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+      employeeID: '1065889',
+      firstName: 'Rudrajit ',
+      lastName: 'Chakraborty ',
+      metnetID: 'rchakraborty3 ',
+      email: 'rchakrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/28/2011',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+     employeeID: '1065889',
+      firstName: 'Rudrajit ',
+      lastName: 'Chakraborty ',
+      metnetID: 'rchakraborty3 ',
+      email: 'rchakrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/28/2011',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    },
+    {
+       employeeID: '1065889',
+      firstName: 'Rudrajit ',
+      lastName: 'Chakraborty ',
+      metnetID: 'rchakraborty3 ',
+      email: 'rchakrabort4@metlife.com ',
+      status: ' N ',
+      creationDate: '7/28/2011',
+      lastModifiedDate: ' 10/29/2015 ',
+      lastModifiedBy: 'apinto1 ',
+    }
+    
+  ];
+
+  source: LocalDataSource;
+
+  constructor(private router: Router) { this.source = new LocalDataSource(this.data); }
+
+  onDeleteConfirm(event) {
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
+
+  onSaveConfirm(event) {
+    if (window.confirm('Are you sure you want to save?')) {
+      event.newData['name'] += ' + added in code';
+      event.confirm.resolve(event.newData);
+    } else {
+      event.confirm.reject();
+    }
+  }
+
+  onCreateConfirm(event) {
+    if (window.confirm('Are you sure you want to create?')) {
+      event.newData['name'] += ' + added in code';
+      event.confirm.resolve(event.newData);
+    } else {
+      event.confirm.reject();
+    }
+  }
+
+  ngOnInit() {
+  }
+
+nodes = [
+    {
+      id: 1,
+      name: 'Admin',
+      children: [
+        { id: 2, name: 'Screen Maintenance',
+        children: [
+        { id: 3, name: 'LookUp Table' },
+         { id: 4, name: 'LookUp Values'},
+          { id: 5, name: 'Properties Values'},
+           { id: 6, name: 'Hierarchy Info Values' },
+           { id: 7, name: 'Object Values' },
+      ] },
+        { id: 8, name: 'Acord XML Upload' }
+        ,
+        { id: 9, name: 'User Access' }
+      ]
+    },
+  ];
+
+onEvent(event): void {
+switch (event.node.data.id) {
+        case 3:
+          this.router.navigateByUrl('/lookUpTable');
+        break;
+        case 4:
+          this.router.navigateByUrl('/lookUpValues');
+        break;
+        case 5:
+          this.router.navigateByUrl('/propertyValues');
+        break;
+        case 6:
+          this.router.navigateByUrl('/hierarchyInfo');
+        break;
+        case 7:
+          this.router.navigateByUrl('/objectValues');
+        break;
+        case 8:
+          this.router.navigateByUrl('/xmlUpload');
+        break;
+        case 9:
+          this.router.navigateByUrl('/userAccess');
+        break;
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+        case 24:
+        case 25:
+        case 26:
+        case 27:
+        case 28:
+        case 29:
+        case 30:
+        case 31:
+        case 32:
+        case 33:
+        case 34:
+        case 35:
+        case 36:
+        case 37:
+        case 38:
+        case 39:
+        case 40:
+          this.router.navigateByUrl('/objectDetail');
+        break;
+        }
+}
+
+}
